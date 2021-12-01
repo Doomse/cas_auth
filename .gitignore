@@ -1,0 +1,15 @@
+.DS_Store
+.idea
+.coverage
+.vscode/
+db.sqlite3
+__pycache__/
+migrations/
+media/
+static/
+htmlcov/
+*.pyc
+logfile.log
+debug.py
+localsettings.py
+venv/
