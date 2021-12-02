@@ -120,4 +120,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.User'
 
 
+MAMA_CAS_LOGIN_TEMPLATE = 'users/login.html'
+
+
 from .localsettings import *
