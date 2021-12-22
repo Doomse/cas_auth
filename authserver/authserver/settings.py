@@ -123,4 +123,7 @@ AUTH_USER_MODEL = 'users.User'
 MAMA_CAS_LOGIN_TEMPLATE = 'users/login.html'
 
 
+AUTH_USERNAME = 'authadmin'
+
+
 from .localsettings import *

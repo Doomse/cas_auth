@@ -39,3 +39,13 @@ MAMA_CAS_SERVICES = [
         'LOGOUT_URL': 'http://localhost:8080/logout/',
     },
 ]
+
+
+REGISTER_ON_CLIENTS = [
+    {
+        'URL': 'http://localhost:8080',
+        'LOGIN_PATH': 'api/login/',
+        'REGISTER_PATH': 'api/register/',
+        'LOGOUT_PATH': 'api/logout/',
+    }
+]
