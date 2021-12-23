@@ -1,6 +1,6 @@
+from django import urls
 from django.conf import settings
 from django.utils import crypto
-from requests.api import get
 from . import models
 from urllib import parse
 import requests
@@ -34,11 +34,13 @@ def register_username(user):
 
             hostname = 'localhost.local' if cl_parse.hostname == 'localhost' else cl_parse.hostname #requests does this for localhost cookies
             url = parse.urlunsplit( (cl_parse.scheme, cl_parse.netloc, client['REGISTER_PATH'], '', '') )
-            r3 = s.post(url, headers={'X-CSRFToken': s.cookies.get('csrftoken', domain=hostname)}, data={'username': user.username})
+            r3 = s.post(url, headers={client['CSRF_HEADER']: s.cookies.get('csrftoken', domain=hostname)}, data={'username': user.username})
 
-            hostname = 'localhost.local' if cl_parse.hostname == 'localhost' else cl_parse.hostname #requests does this for localhost cookies
             url = parse.urlunsplit( (cl_parse.scheme, cl_parse.netloc, client['LOGOUT_PATH'], '', '') )
             r4 = s.get(url)
+
+            url = parse.urlunsplit( (host_parse.scheme, host_parse.netloc, urls.reverse('cas_logout'), '', '') )
+            r5 = s.get(url)
 
 
     #Set unusable password for 'authadmin'

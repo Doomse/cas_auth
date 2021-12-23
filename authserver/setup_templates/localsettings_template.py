@@ -47,5 +47,6 @@ REGISTER_ON_CLIENTS = [
         'LOGIN_PATH': 'api/login/',
         'REGISTER_PATH': 'api/register/',
         'LOGOUT_PATH': 'api/logout/',
+        'CSRF_HEADER': 'X-CSRFToken',
     }
 ]
